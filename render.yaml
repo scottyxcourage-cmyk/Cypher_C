@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: cypher-c-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /ping
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: OWNER_NUMBER
+        sync: false
+      - key: APP_URL
+        sync: false
